@@ -1,0 +1,11 @@
+1) Detecting cycle in a graph which is extremely essential in Operating Systems for something 
+called deadlock detection in resource allocation.
+
+2) The DFS algorithm can be used to find a path between two given vertices u and z.
+i) Call DFS(G, u) with u as the start vertex.
+ii) Use a stack S to keep track of the path between the start vertex and the current vertex.
+iii) As soon as destination vertex z is encountered, return the path as the
+contents of the stack
+
+3) Solving mazes and other puzzles with only one solution.
+
