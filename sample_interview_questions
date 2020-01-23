@@ -1,0 +1,86 @@
+1. Find the number of islands in a graph.
+Given a boolean 2D matrix, find the number of islands. A group of connected 1s forms an island. 
+
+2.Transitive Closure of a Graph using DFS
+Given a directed graph, find out if a vertex v is reachable from another vertex u for all vertex pairs (u, v) in the given graph. 
+Here reachable mean that there is a path from vertex u to v. The reach-ability matrix is called transitive closure of a graph.
+
+3.Detect cycle in an undirected graph
+Given an undirected graph, how to check if there is a cycle in the graph? We do a DFS traversal of the given graph. 
+For every visited vertex ‘v’, if there is an adjacent ‘u’ such that u is already visited and u is not parent of v,
+then there is a cycle in graph.
+
+4.Longest path between any pair of vertices
+We are given a map of cities connected with each other via cable lines such that there is no cycle between any two cities. 
+We need to find the maximum length of cable between any two cities for given city map.
+
+5.Find a Mother Vertex in a Graph
+A mother vertex in a graph G = (V,E) is a vertex v such that all other vertices in G can be reached by a path from v.
+
+6.Stepping Numbers
+Given two integers ‘n’ and ‘m’, find all the stepping numbers in range [n, m]. 
+A number is called stepping number if all adjacent digits have an absolute difference of 1.
+
+7.Maximum product of two non-intersecting paths in a tree
+Given an undirected connected tree with N nodes (and N-1 edges), we need to find two paths in this tree 
+such that they are non-intersecting and the product of their length is maximum.
+
+8. Iterative Depth First Traversal of Graph
+
+def DFS(adjacencyList, s=startVertex, V):
+    visited = [False for i in range(V)]  
+    # Create a stack for DFS 
+    stack = [] 
+
+    # Push the current source node.  
+    stack.append(start)  
+
+    while (len(stack)):  
+        # Pop a vertex from stack and print it  
+        start = stack[-1]  
+        stack.pop() 
+
+        # Stack may contain same vertex twice. So  
+        # we need to print the popped item only  
+        # if it is not visited.  
+        if (not visited[start]):  
+            print(start,end=' ') 
+            visited[start] = True 
+
+        # Get all adjacent vertices of the popped vertex start  
+        # If a adjacent has not been visited, then push it  
+        # to the stack.  
+        for node in adjacencyList[start]:  
+            if (not visited[node]):  
+                stack.append(node)  
+
+9. Duplicate subtree in Binary Tree
+Given a binary tree, the task is to check whether the binary tree contains a duplicate sub-tree of size two or more.
+Input:         A
+             /   \ 
+           B       C
+         /   \       \    
+        D     E       B     
+                     /  \    
+                    D    E
+Output: Yes
+    B     
+  /   \    
+ D     E
+is the duplicate sub-tree.
+Input:         A
+             /   \ 
+           B       C
+         /   \
+        D     E
+Output: No
+A queue can be used to traverse the tree in a bfs manner. While traversing the nodes, push the node along with its left
+and right children in a map and if any point the map contains duplicates then the tree contains duplicate sub-trees.
+
+10. Find the first N pure numbers
+Given an integer N, the task is to print first Nth pure numbers. A number is said to be pure if:
+    1. It has even number of digits.
+    2. All the digits are either 4 or 5.
+    3. And the number is a palindrome.
+At each step of the queue we can generate the next number by adding 4 and 5 on both of the sides i.e. the ending and the 
+beginning of the previous number.
